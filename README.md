@@ -11,7 +11,11 @@ This repository provides a number of logical subsets of the LINCS data as separa
 
 I believe making this data available here complies with both the letter and the spirit of applicable rules governing distribution of the LINCS project.  If you are part of the LINCS project and feel differently, feel free to generate an issue on this repository to initiate discussion.
 
-## Files
+## Data Processing
+
+For the CMAP data, the affymetrix data files were downloaded and processed by RMA.  Probe level annotations were updated to the latest genome build and mapped to Entrez Gene ID using the custom CDF files from http://brainarray.mbni.med.umich.edu (version 21).  Robust zscores were then calculated for each treated sample vs. the mean of vehicle control samples on the same plate (where robust z-score was calculated as x_i - median(x) / MAD(x)).
+
+For the LINCS data, level 3 data was downloaded from GEO.  Sample metadata was obtained and highly consistent instances (`is_gold = true`) were identified using the `clue.io` REST API (facilitated by the `slinky` package, https://github.com/erikor/slinky).  Robust Z-scores vs. same plate vehicle control samples were then calculated.
 
 **NOTE ON x1000 FILES**
 
@@ -20,6 +24,8 @@ Storing floating point data takes more room than integer data.  I can make these
 Obviously, this only provides the data to 3 decimal places.  This is sufficient for my analytical workflows.  However I am open to increasing the precision if required.   
 
 Alternatively, I could store the original data.  But Github only provide 1GB of free storage per repository so that would severely limit the number of files I could include in this repo without some type of fiscal support.
+
+## Available Files
 
 **Available Files**
 
