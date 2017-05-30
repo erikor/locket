@@ -34,3 +34,5 @@ Alternatively, I could store the original data.  But Github only provide 1GB of 
 * **l1000_dmso.rds** 	LINCS expression values for the landmark genes in DMSO treated cells
 * **l1000_fda.rds** 	LINCS expression values for samples treated with FDA approved compounds ("gold" instances only)
 * **l1000_fda_zsvc_x1000.rds** Robust zscores (x1000) for the landmark genes for samples treated with FDA approved compounds relative to vehicle control samples from the same plate.
+* **fda_zsvc_x1000.rds** Robust zscores (x1000) for the landmark genes for samples treated with FDA approved compounds relative to vehicle control samples from the same plate.
+* **fda_inst_info.rds** Mapping from `distil_id` to `pert_desc` for l1000_fda and l1000_fda_zsvc files
